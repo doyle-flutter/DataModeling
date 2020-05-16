@@ -149,3 +149,48 @@ class Modeling1{
       N_65SEISANGGORYEONGJA: json['N_65SEISANGGORYEONGJA'] as String
     );
 }
+
+
+
+
+/// UI
+import 'package:flutter/material.dart';
+import 'package:datamodeling/modeling1.dart';
+
+void main() => runApp(
+  MaterialApp(
+    home: MyModelings(),
+  )
+);
+
+class MyModelings extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    List sampleList = sampleData['octastatapi419']['row'];
+    List<Modeling1> modeling1 = sampleList.map((e) => Modeling1.toJson(json: e)).toList();
+    print(modeling1);
+    print("modeling1.GIGAN : ${modeling1[0].GIGAN}");
+    print("modeling1.JACHIGU : ${modeling1[0].JACHIGU}");
+    print("modeling1.GYE_1 : ${modeling1[0].GYE_1}");
+    print("modeling1.NAMJA_1 : ${modeling1[0].NAMJA_1}");
+    print("modeling1.YEOJA_1 : ${modeling1[0].YEOJA_1}");
+
+    return Scaffold(
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text("제임쓰 Flutter"),
+            Text("modeling1.GIGAN : ${modeling1[0].GIGAN}"),
+            Text("modeling1.JACHIGU : ${modeling1[0].JACHIGU}"),
+            Text("modeling1.GYE_1 : ${modeling1[0].GYE_1}"),
+            Text("modeling1.NAMJA_1 : ${modeling1[0].NAMJA_1}"),
+            Text("modeling1.YEOJA_1 : ${modeling1[0].YEOJA_1}"),
+          ],
+        ),
+      ),
+    );
+  }
+}
