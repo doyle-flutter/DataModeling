@@ -100,7 +100,7 @@ final num cod;
   );
 }
 
-/// UI
+/// UI File
 import 'package:datamodeling/modeling2.dart';
 import 'package:flutter/material.dart';
 
@@ -128,6 +128,9 @@ class MyModelings extends StatelessWidget {
           children: <Widget>[
             Center(
               child: Text("제임쓰 Flutter")
+            ),
+            Center(
+              child: Text(" - openWeather - ")
             ),
             Text("modeling2 : ${modeling2.coord.toString()}"),
             Text("modeling2 : ${modeling2.weather.toString()}"),
